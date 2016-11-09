@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_display_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmanon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 23:05:12 by nmanon            #+#    #+#             */
-/*   Updated: 2016/11/08 23:05:15 by nmanon           ###   ########.fr       */
+/*   Created: 2016/11/05 05:29:34 by nmanon            #+#    #+#             */
+/*   Updated: 2016/11/05 05:29:38 by nmanon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <unistd.h>
+#include <fcntl.h>
 
-void	ft_is_negative(int n)
+void	disp_file(int fd)
 {
-	if (n >= 0)
+	char	buffer;
+
+	while (read(fd, &buffer, 1) != 0)
+		write(1, &buffer, 1);
+}
+
+int		main(int argc, char **argv)
+{
+	int	fd;
+
+	if (argc != 2)
 	{
-		ft_putchar('P');
+		if (argc > 2)
+			write(2, "Too many arguments.\n", 20);
+		if (argc < 2)
+			write(2, "File name missing.\n", 19);
+		return (1);
 	}
-	else
-	{
-		ft_putchar('N');
-	}
+	fd = open(argv[1], O_RDONLY);
+	disp_file(fd);
+	close(fd);
+	return (0);
 }

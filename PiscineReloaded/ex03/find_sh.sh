@@ -1,1 +1,1 @@
-me "*.sh" | rev | cut -c 4- | rev
+find . \( -name '*.sh' \) -print | sed 's/\(.*\)\///g' | sed 's/\.sh//g'

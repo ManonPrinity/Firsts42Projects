@@ -5,18 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmanon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 03:03:29 by nmanon            #+#    #+#             */
-/*   Updated: 2016/11/05 03:03:30 by nmanon           ###   ########.fr       */
+/*   Created: 2016/11/08 01:02:31 by nmanon            #+#    #+#             */
+/*   Updated: 2016/11/08 01:02:35 by nmanon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 int		ft_iterative_factorial(int nb)
 {
-	int res
+	int res;
 
 	res = 1;
-	if(nb < 0 || nb > 12)
+	if (nb < 0 || nb > 12)
 		return (0);
 	if (nb == 1)
 		return (1);

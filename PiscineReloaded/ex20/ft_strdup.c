@@ -22,13 +22,13 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-char	ft_strdup(char *str)
+char	*ft_strdup(char *str)
 {
 	char	*ret;
 	int		i;
 
 	i = 0;
-	if (!(ret = (char *)malloc(ft_strlen(str) + 1)))
+	if ((ret = (char *)malloc(ft_strlen(str) + 1)))
 	{
 		while (str[i] != '\0')
 		{

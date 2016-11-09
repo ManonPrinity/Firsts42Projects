@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmanon <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 04:08:42 by nmanon            #+#    #+#             */
-/*   Updated: 2016/11/05 04:08:45 by nmanon           ###   ########.fr       */
+/*   Created: 2016/11/09 00:11:35 by nmanon            #+#    #+#             */
+/*   Updated: 2016/11/09 00:11:37 by nmanon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,8 @@ void	sort_av(int ac, char **av)
 	j = 1;
 	while (i < (ac))
 	{
-		ft_putchar('a');
 		while (j < (ac - 1))
 		{
-			ft_putchar('b');
 			if (ft_strcmp(av[j], av[j + 1]) > 0)
 			{
 				tmp = av[j];
